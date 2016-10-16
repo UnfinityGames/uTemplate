@@ -1,0 +1,25 @@
+using UnityEditor;
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+#SCRIPTHEADER#
+public class #SCRIPTNAME#
+{	
+	//Add menu item named "#NICESCRIPTNAME#" to the "GameObject" menu.
+	[MenuItem("GameObject/#NICESCRIPTNAME#")]
+	static void #SCRIPTNAME#Function()
+	{
+		
+	}
+	
+	//Validate the menu item.
+	//The item will be disabled if this function returns false.
+	[MenuItem("GameObject/#NICESCRIPTNAME#", true)]
+	static bool Validate#SCRIPTNAME#Function()
+	{
+		return true;
+	}
+	
+	#SCRIPTMETHODS#
+}
