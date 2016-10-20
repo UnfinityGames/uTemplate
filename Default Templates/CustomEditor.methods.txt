@@ -1,0 +1,58 @@
+[For Editor]
+
+//Implement this function to make a custom inspector.
+//
+//Inside this function you can add your own custom GUI for the inspector of a specific object class.
+//
+//Note: This function has to be overrided in order to work.
+[DEFAULT] override void OnInspectorGUI()
+
+//Lets the Editor handle an event in the scene view.
+//
+//In the OnSceneGUI you can do eg. mesh editing, terrain painting or advanced gizmos If call Event.current.Use(), the event will be "eaten" by the editor and not be used by the scene view itself.
+void OnSceneGUI() Lets the Editor handle an event in the scene view.
+
+//Override this method in subclasses to return false if you don't want default margins.
+//
+//By default, content in the Inspector has a large left margin and a small right margin. This is because the entire Editor.OnInspectorGUI callback is wrapped in a vertical group with the EditorStyles.inspectorDefaultMargins style. For a consistent look, these default margins should be used for most GUI with regular controls.
+//
+//However, some special GUI elements may benefit from occupying the full width of the Inspector, with only a small margin in both sides. To disable the default margins, override the Editor.UseDefaultMargins method in your custom Editor and make it return false. Then you can wrap your GUI content inside a vertical groups to your liking. For example, you can wrap some of the GUI inside a vertical group with the EditorStyles.inspectorFullWidthMargins style and wrap other parts of the GUI inside a vertical group with the EditorStyles.inspectorDefaultMargins style.
+bool UseDefaultMargins()
+
+# Preview #
+
+//Implement this method to show asset information on top of the asset preview.
+//
+//You will also have to implement HasPreviewGUI and OnPreviewGUI in addition to this method. The default implementation just returns an empty string, which disables the feature.
+override string GetInfoString()
+
+//Override this method if you want to change the label of the Preview area.
+//
+//If null is returned the default text "Preview" will be used.
+override GUIContent GetPreviewTitle()
+
+//Returns true if this component can be Previewed in its current state. 
+//Override this method in subclasses if you implement OnPreviewGUI.
+//
+//You can also use it to disable or enable preview depending on the target asset. The default implementation simply returns false, so if you override OnPreviewGUI you have to override this method as well.
+override bool HasPreviewGUI()
+
+//Implement to create your own interactive custom preview. Interactive custom previews are used in the preview area of the inspector and the object selector.
+//
+//Implement this instead of OnPreviewGUI if you only want to display interactive custom previews (you can implement both if some previews are interactive and others aren't). The overidden method should use the rectangle passed in and render a preview of the asset into it. The default implementation is a no-op.
+void OnInteractivePreviewGUI(Rect r, GUIStyle background)
+
+//Implement to create your own custom preview for the preview area of the inspector, primary editor headers and the object selector.
+//
+//If you implement OnInteractivePreviewGUI then this will only be called for non-interactive custom previews. The overidden method should use the rectangle passed in and render a preview of the asset into it. The default implementation is a no-op.
+void OnPreviewGUI(Rect r, GUIStyle background)
+
+//Override this method if you want to show custom controls in the preview header.
+//
+//The default implementation is a no-op.
+void OnPreviewSettings()
+
+//Override this method if you want to render a static preview that shows.
+//
+//If null is returned the builtin icon for the class type is used.
+Texture2D RenderStaticPreview(string assetPath, Object[] subAssets, int width, int height)

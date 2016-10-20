@@ -1,0 +1,29 @@
+[For EditorWindow]
+
+//Implement your own editor GUI here.
+[DEFAULT] void OnGUI()
+
+//Called when the window gets keyboard focus.
+void OnFocus()
+
+//Called whenever the scene hierarchy has changed.
+//
+//This is transform.parent changed, gameObject.name, creating a new game object, etc.
+void OnHierarchyChange()
+
+//OnInspectorUpdate is called at 10 frames per second to give the inspector a chance to update.
+void OnInspectorUpdate()
+
+//Called when the window loses keyboard focus.
+void OnLostFocus()
+
+//Called whenever the project has changed.
+//
+//Typically after import, file moves, etc.
+void OnProjectChange()
+
+//Called whenever the selection has changed.
+void OnSelectionChange()
+
+//Called 100 times per second on all visible windows.
+void Update()

@@ -1,0 +1,19 @@
+using UnityEngine;
+using UnityEditor;
+using System.Collections;
+using System.Collections.Generic;
+
+public class #SCRIPTNAME# : ScriptableWizard
+{	
+	//Add menu item to the menu.
+	[MenuItem ("GameObject/#NICESCRIPTNAME#...")]
+	static void CreateWizard()
+	{
+		ScriptableWizard.DisplayWizard<#SCRIPTNAME#>("#NICESCRIPTNAME#", "Create", "Cancel");
+
+		//If you don't want to use the secondary button simply leave it out:
+		//ScriptableWizard.DisplayWizard<#SCRIPTNAME#>("#NICESCRIPTNAME#, "Create");
+	}
+	
+	#SCRIPTMETHODS#
+}

@@ -1,0 +1,41 @@
+[For AssetPostprocessor]
+
+//Feeds a source material.
+private Material OnAssignMaterialModel(Material material, Renderer renderer)	return material;
+
+//This is called after importing of any number of assets is complete (when the Assets progress bar has reached the end).
+//Note that this function must be declared static - it will not be called correctly if declared as an instance function.
+private static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromPath)
+
+//Handler called when asset is assigned to a different asset bundle.
+private void OnPostprocessAssetbundleNameChanged(string assetPath, string previousAssetBundleName, string newAssetBundleName)
+
+//Add this function in a subclass to get a notification when an audio clip has completed importing.
+private void OnPostprocessAudio(AudioClip clip)
+
+//Gets called for each GameObject that had at least one user property attached to it in the imported file.
+private void OnPostprocessGameObjectWithUserProperties(GameObject gameObject, string[] propNames, object[] values)
+
+//Add this function in a subclass to get a notification when a model has completed importing.
+private void OnPostprocessModel(GameObject gameObject)
+
+//Add this function in a subclass to get a notification when a SpeedTree asset has completed importing.
+private void OnPostprocessSpeedTree(GameObject gameObject)
+
+//Add this function in a subclass to get a notification when a texture has completed importing just before the texture is saved to disk.
+private void OnPostprocessTexture(Texture2D texture)
+
+//Add this function in a subclass to get a notification just before animation from a model (.fbx, .mb file etc.) is imported.
+private void OnPreprocessAnimation()
+
+//Add this function in a subclass to get a notification just before an audio clip is being imported.
+private void OnPreprocessAudio()
+
+//Add this function in a subclass to get a notification just before a model (.fbx, .mb file etc.) is imported.
+private void OnPreprocessModel()
+
+//Add this function in a subclass to get a notification just before a SpeedTree asset (.spm file) is imported.
+private void OnPreprocessSpeedTree()
+
+//Add this function in a subclass to get a notification just before the texture importer is run.
+private void OnPreprocessTexture()

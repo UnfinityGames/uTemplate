@@ -1,0 +1,16 @@
+[For ScriptableWizard]
+
+//This is called when the user clicks on the Create button.
+//
+//Here you perform any final creation/modification actions. After OnCreateWizard is called, the wizard is automatically closed.
+[DEFAULT] void OnWizardCreate()
+
+//Allows you to provide an action when the user clicks on the other button.
+//
+//This is the place where you can implement all the stuff that will be done if the user clicks the secondary option when calling DisplayWizard.
+[DEFAULT] void OnWizardOtherButton()
+
+//This is called when the wizard is opened or whenever the user changes something in the wizard.
+//
+//This allows you to set the helpString, errorString and enable/disable the Create button via isValid. Also it lets you change labels (for timers i.e.) or buttons when the wizard is being shown.
+void OnWizardUpdate()
