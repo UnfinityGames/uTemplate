@@ -10,7 +10,7 @@
 //Lets the Editor handle an event in the scene view.
 //
 //In the OnSceneGUI you can do eg. mesh editing, terrain painting or advanced gizmos If call Event.current.Use(), the event will be "eaten" by the editor and not be used by the scene view itself.
-void OnSceneGUI() Lets the Editor handle an event in the scene view.
+void OnSceneGUI()
 
 //Override this method in subclasses to return false if you don't want default margins.
 //
